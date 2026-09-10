@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #e4e1e6;
+  background: #050505;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #050505;
+}
+
+button, input, textarea { font: inherit; }
+button { cursor: pointer; border: none; background: none; }
+
+/* Hexagon clip-path for avatars */
+.hex-clip {
+  clip-path: polygon(25% 5%, 75% 5%, 95% 50%, 75% 95%, 25% 95%, 5% 50%);
+}
+
+.hex-clip-sm {
+  clip-path: polygon(25% 5%, 75% 5%, 95% 50%, 75% 95%, 25% 95%, 5% 50%);
+}
+
+/* Honeycomb background pattern */
+.honeycomb-bg {
+  background-color: #050505;
+  background-image:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(0deg, transparent 0%, transparent 100%);
+  background-size: 24px 24px;
+}
+
+.honeycomb-pattern {
+  background-color: #050505;
+  background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 12L21 0L42 12L42 36L21 48L0 36Z' fill='none' stroke='%23ffffff' stroke-opacity='0.05' stroke-width='1'/%3E%3Cpath d='M42 12L63 0L84 12L84 36L63 48L42 36Z' fill='none' stroke='%23ffffff' stroke-opacity='0.05' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 84px 48px;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(18, 18, 21, 0.75);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+}
+
+.glass-input {
+  background: rgba(18, 18, 21, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.glass-overlay {
+  background: rgba(24, 24, 27, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Hairline borders */
+.hairline { border: 1px solid rgba(255, 255, 255, 0.08); }
+.hairline-t { border-top: 1px solid rgba(255, 255, 255, 0.08); }
+.hairline-b { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+.hairline-r { border-right: 1px solid rgba(255, 255, 255, 0.08); }
+.hairline-l { border-left: 1px solid rgba(255, 255, 255, 0.08); }
+.hairline-bright { border: 1px solid rgba(255, 255, 255, 0.16); }
+
+/* Honey glow */
+.honey-glow {
+  box-shadow: 0 0 24px -4px rgba(245, 158, 11, 0.22);
+}
+
+.honey-glow-strong {
+  box-shadow: 0 0 24px -4px rgba(245, 158, 11, 0.4);
+}
+
+/* Outgoing bubble gradient */
+.bubble-outgoing {
+  background: linear-gradient(135deg, #1c1a17 0%, #161514 100%);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.bubble-incoming {
+  background: #18181b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.2); }
+
+/* Hide scrollbar for horizontal scroll */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Hex status badge */
+.hex-badge {
+  clip-path: polygon(25% 5%, 75% 5%, 95% 50%, 75% 95%, 25% 95%, 5% 50%);
+}
+
+/* Specular top edge */
+.specular-top {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Amber pulse for active status */
+@keyframes honey-pulse {
+  0%, 100% { box-shadow: 0 0 6px -1px rgba(245, 158, 11, 0.5); }
+  50% { box-shadow: 0 0 14px -1px rgba(245, 158, 11, 0.8); }
+}
+
+.animate-honey-pulse {
+  animation: honey-pulse 2s ease-in-out infinite;
+}
+
+/* Typing dots */
+@keyframes typing-bounce {
+  0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-3px); }
+}
+
+.typing-dot {
+  animation: typing-bounce 1.4s ease-in-out infinite;
+}
+
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
